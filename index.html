@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovFlix</title>
+   
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" 
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- CDN BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <!-- STYLOS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="body"> 
+    <!-- PRE LOADING -->
+    <div class="centrado-loading" id="onload">
+      <div class="lds-ellipsis">    
+        <div>
+        </div>
+        <div>
+        </div>
+        <div>
+        </div>
+        <div>
+        </div>  
+        <span class="loading-pre">loading</span>   
+      </div>  
+    </div>
+    <!-- MENU NAVEGACION -->
+  
+      <nav class="container navbar navbar-expand-lg  ">     
+        <a class=" navbar-brand" href="index.html">Movflix <img src="img/palomitas-de-maiz.svg" alt="" class="icon-popcorn"> </a>
+        <div class="contenedor-nav">
+          <i class="ml-2 fas fa-search icon-search"></i>
+           <span class="ml-2">Search</span> 
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          </button>
+        </div>   
+      </nav>
+    </div> 
+    <div class="bg-nav pt-3 ">
+    <!-- CONTENEDOR PARA LOS RESULTADO DE LA BUSQUEDA -->  
+    <div class="contenedor-resultados-buscador">
+      <input id="text-search" autocomplete="off" class="search mt-2" type="text" placeholder="Find your favorite movie...."><i class="ml-2 fas fa-search icon-input-search" id="icon-submit-search" ></i> 
+    </div>
+    <div id="divSearch"></div>  
+    <div class="bg py-4" > 
+    <!-- CONTENEDOR PRINCIPAL --> 
+    <div class=" contenedor-principal ">           
+      <header class="header">
+          <h1 class="text-center title"><span class="w-style">MovFlix</span></h1>
+      </header> 
+     
+      <div class="buscador container">
+        <div class="row">
+          <div class="col-12 col-lg-8 mt-5">
+            <h4> <span class="">W</span>elcome.</h4>
+              <p class="mt-3 p-secundario">Millions of movies, TV shows and people to discover. Explore now.</p>                   
+          </div>
+        </div>
+      </div>   
+    </div>
+    </div>  
+    <!-- MAIN -->
+    <div class="main">
+      <!-- SPINER GIF -->
+      <div class="contenedor-gif ">
+        <div class="wrap">
+          <div class="dot dot-1"></div>
+          <div class="dot dot-2"></div>
+          <div class="dot dot-3"></div>
+          <div class="dot dot-4"></div>
+          <div class="dot dot-5"></div>
+        </div>
+     
+        <p class="text-white tex-loading text-center mt-2 ">LOADING</p>
+      </div>    
+      <!-- RESULTADO DE PELICULAS / DETALLE DE PELICULA -->       
+      <div class="container "id="bg-movie">          
+        <div id="resultado" class="row"></div>
+      <!--  <div class="div-banner"></div> -->
+      </div>
+      <!-- RESULTADO DE PELICULAS SIMILARES  --> 
+      <div class="container pt-3 similares"id="peliculasSimilares">           
+        <div id="resultado-2" class="row"></div>
+        
+      </div>
+      <!-- RESULTADO DE PROXIMOS EXTRENOS --> 
+    <div class="peliculas-recomendadas contenedor container">
+      <h3 class="title-releases pt-2">NEXT RELEASES</h3>
+      <hr class="mb-5">
+			<div class="contenedor-principal">
+				<button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
+        
+				<div class="contenedor-carousel container">
+         
+					<div class="carousel-movie">
+						
+					</div>
+				</div>
+
+				<button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
+			</div>
+		</div>
+
+    <!-- MODAL --> 
+    <div class="modal-contenedor">
+      <div class="content-modal modal-close">
+        <p class="cerrar-x">X</p>
+          <img class="img-movie" src="" alt="">
+      </div>
+    </div>
+
+     <!-- BOTON UP -->
+    <div class="go-top-container ">
+      <div class="go-top-button"></div>
+        <i class="fas fa-chevron-circle-up "></i>
+    </div>
+
+    
+    <!-- FOOTER --> 
+    <footer class="text-center text-dark footer">
+      <p class="mb-0 p-3"> | Design by Nicolas<span class="bg-footer-text"> DEV</span> |</p>  
+    </footer>  
+
+
+    <!-- SCRIPT --> 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
+    <script async src="js/themovieDB.js"></script>
+    <script async src="js/interfaz.js"></script>
+    <script async src="js/app.js"></script>
+</body>
+   
+</html>
